@@ -225,14 +225,14 @@ const sentMessages = (list) => {
 
         if (list[i].isMy === true) {
             const sentMessages = document.querySelector('.display__sent')
-            const leftMessage = document.createElement('div')
-            leftMessage.classList.add("sent-left")
-            sentMessages.append(leftMessage)
+            const myMessage = document.createElement('div')
+            myMessage.classList.add("sent-left")
+            sentMessages.append(myMessage)
 
 
             const fullText = document.createElement('div')
             fullText.classList.add("display__full-text")
-            leftMessage.append(fullText)
+            myMessage.append(fullText)
 
 
             const leftPic = document.createElement('div')
@@ -252,17 +252,17 @@ const sentMessages = (list) => {
             const leftTime = document.createElement('div')
             leftTime.classList.add("display__left-time")
             leftTime.textContent = list[i].time
-            leftMessage.append(leftTime)
+            myMessage.append(leftTime)
 
         } else {
             const sentMessages = document.querySelector('.display__sent')
-            const rightMessage = document.createElement('div')
-            rightMessage.classList.add("sent-right")
-            sentMessages.append(rightMessage)
+            const usersMessage = document.createElement('div')
+            usersMessage.classList.add("sent-right")
+            sentMessages.append(usersMessage)
 
             const rightContent = document.createElement('div')
             rightContent.classList.add("sent-right__content")
-            rightMessage.append(rightContent)
+            usersMessage.append(rightContent)
 
             const rightText = document.createElement('div')
             rightText.classList.add("sent-right__message")
