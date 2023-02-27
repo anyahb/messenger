@@ -20,13 +20,13 @@ const createUsers = (list) => {
 
     for (let i = 0; i < list.length; i++) {
 
-        const users = document.querySelector('.second-column__users')
+        const users = document.querySelector('.display__users')
         const user = document.createElement('div')
-        user.classList.add("second-column__item")
+        user.classList.add("display__item")
         users.append(user)
 
         const userImg = document.createElement('img')
-        userImg.classList.add("second-column__item-img")
+        userImg.classList.add("display__item-img")
         userImg.src = list[i].user
         user.append(userImg)
     }
@@ -64,14 +64,14 @@ const messages = [
     {
         img: "./img/user5.png",
         name: "Lidia Gonzalez",
-        message: "I'll wear a white shirt with blue jeans, what about you?",
+        message: "I'll wear a white shirt and blue jeans, what about you?",
         time: "8:26 AM",
         amount: "1"
     },
     {
         img: "./img/user6.png",
         name: "Viktor Johnmark",
-        message: "You won't see this on the news",
+        message: "Yep. It's on Netflix",
         time: "5:12 AM",
         amount: "12"
     },
@@ -96,57 +96,57 @@ const createMessages = (list) => {
     for (let i = 0; i < list.length; i++) {
 
 
-        const messages = document.querySelector('.second-column__messages')
+        const messages = document.querySelector('.display__messages')
         const message = document.createElement('div')
-        message.classList.add("second-column__message")
+        message.classList.add("display__message")
         messages.append(message)
 
 
         const messagesContent = document.createElement('div')
-        messagesContent.classList.add("second-column__content")
+        messagesContent.classList.add("display__content")
         message.append(messagesContent)
 
 
         const messagePic = document.createElement('div')
-        messagePic.classList.add("second-column__user-pic")
+        messagePic.classList.add("display__user-pic")
         messagesContent.append(messagePic)
 
         const messagePicItem = document.createElement('img')
-        messagePicItem.classList.add("second-column__user-el")
+        messagePicItem.classList.add("display__user-el")
         messagePicItem.src = list[i].img
         messagePic.append(messagePicItem)
 
 
         const messageText = document.createElement('div')
-        messageText.classList.add("second-column__text")
+        messageText.classList.add("display__text")
         messagesContent.append(messageText)
 
 
         const messageName = document.createElement('div')
-        messageName.classList.add("second-column__username")
+        messageName.classList.add("display__username")
         messageName.textContent = list[i].name
         messageText.append(messageName)
 
 
         const messageWords = document.createElement('div')
-        messageWords.classList.add("second-column__text-content")
+        messageWords.classList.add("display__text-content")
         messageWords.textContent = list[i].message
         messageText.append(messageWords)
 
 
         const messageNumbers = document.createElement('div')
-        messageNumbers.classList.add("second-column__numbers")
+        messageNumbers.classList.add("display__numbers")
         message.append(messageNumbers)
 
 
         const messageTime = document.createElement('div')
-        messageTime.classList.add("second-column__time")
+        messageTime.classList.add("display__time")
         messageTime.textContent = list[i].time
         messageNumbers.append(messageTime)
 
 
         const messageAmount = document.createElement('div')
-        messageAmount.classList.add("second-column__amount")
+        messageAmount.classList.add("display__amount")
         messageAmount.textContent = list[i].amount
         messageNumbers.append(messageAmount)
 
@@ -158,16 +158,61 @@ const createMessages = (list) => {
 const receivedMessages = [
     {
         img: "./img/viktor.png",
-        message: "Check this out!",
+        message: "Did you get your birthday card yet?",
         time: "5:12 AM",
         isMy: true
     },
 
     {
-        message: "This is beautiful! I love it!",
+        message: "Not to my knowledge",
         time: "7:16 AM",
         isMy: false
+    },
+
+
+    {
+        img: "./img/viktor.png",
+        message: "I just put in my paper for my vacation time",
+        time: "7:30 AM",
+        isMy: true
+    },
+
+    {
+        message: "Okay the plan is to come here, I'll buy your ticket",
+        time: "7:31 AM",
+        isMy: false
+    },
+
+    {
+        img: "./img/viktor.png",
+        message: "Sounds good!",
+        time: "7:32 AM",
+        isMy: true
+    },
+
+    {
+        img: "./img/viktor.png",
+        message: "Looking forward to seeing you",
+        time: "7:32 AM",
+        isMy: true
+    },
+
+    {
+        message: "Btw did you manage to find out how to watch Breaking Bad?",
+        time: "20:21 PM",
+        isMy: false
+    },
+
+    {
+        img: "./img/viktor.png",
+        message: "Yep. It's on Netflix",
+        time: "20:25 PM",
+        isMy: true
     }
+
+
+
+
 
 ]
 
@@ -179,15 +224,15 @@ const sentMessages = (list) => {
     for (let i = 0; i < list.length; i++) {
 
         if (list[i].isMy === true) {
-            const sentMessages = document.querySelector('.second-column__sent')
-            const leftMessage = document.createElement('div')
-            leftMessage.classList.add("sent-left")
-            sentMessages.append(leftMessage)
+            const sentMessages = document.querySelector('.display__sent')
+            const myMessage = document.createElement('div')
+            myMessage.classList.add("sent-left")
+            sentMessages.append(myMessage)
 
 
             const fullText = document.createElement('div')
-            fullText.classList.add("second-column__full-text")
-            leftMessage.append(fullText)
+            fullText.classList.add("display__full-text")
+            myMessage.append(fullText)
 
 
             const leftPic = document.createElement('div')
@@ -205,19 +250,19 @@ const sentMessages = (list) => {
             fullText.append(leftText)
 
             const leftTime = document.createElement('div')
-            leftTime.classList.add("second-column__left-time")
+            leftTime.classList.add("display__left-time")
             leftTime.textContent = list[i].time
-            leftMessage.append(leftTime)
+            myMessage.append(leftTime)
 
         } else {
-            const sentMessages = document.querySelector('.second-column__sent')
-            const rightMessage = document.createElement('div')
-            rightMessage.classList.add("sent-right")
-            sentMessages.append(rightMessage)
+            const sentMessages = document.querySelector('.display__sent')
+            const usersMessage = document.createElement('div')
+            usersMessage.classList.add("sent-right")
+            sentMessages.append(usersMessage)
 
             const rightContent = document.createElement('div')
             rightContent.classList.add("sent-right__content")
-            rightMessage.append(rightContent)
+            usersMessage.append(rightContent)
 
             const rightText = document.createElement('div')
             rightText.classList.add("sent-right__message")
@@ -225,7 +270,7 @@ const sentMessages = (list) => {
             rightContent.append(rightText)
 
             const rightTime = document.createElement('div')
-            rightTime.classList.add("second-column__right-time")
+            rightTime.classList.add("display__right-time")
             rightTime.textContent = list[i].time
             rightContent.append(rightTime)
 
@@ -260,12 +305,12 @@ const media = [
 ]
 
 
-const mediaPics = (list) => {
+const createMediaPics = (list) => {
     for (let i = 0; i < list.length; i++) {
 
-        const mediaImages = document.querySelector('.second-column__media-pics')
+        const mediaImages = document.querySelector('.display__media-pics')
         const mediaItem = document.createElement('img')
-        mediaItem.classList.add("second-column__media-item")
+        mediaItem.classList.add("display__media-item")
         mediaItem.src = list[i].img
         mediaImages.append(mediaItem)
     }
@@ -295,38 +340,38 @@ const files = [
 ]
 
 
-const pdfFiles = (list) => {
+const createPdfFiles = (list) => {
     for (let i = 0; i < list.length; i++) {
 
-        const sharedDocs = document.querySelector(".second-column__docs-container")
+        const sharedDocs = document.querySelector(".display__docs-container")
         const doc = document.createElement("div")
-        doc.classList.add("second-column__docs")
+        doc.classList.add("display__docs")
         sharedDocs.append(doc)
 
         const file = document.createElement("div")
-        file.classList.add("second-column__files")
+        file.classList.add("display__files")
         doc.append(file)
 
         const app = document.createElement("div")
-        app.classList.add("second-column__app")
+        app.classList.add("display__app")
         file.append(app)
 
         const appImg = document.createElement("img")
-        appImg.classList.add("second-column__app-img")
+        appImg.classList.add("display__app-img")
         appImg.src = list[i].img
         app.append(appImg)
 
         const docText = document.createElement("div")
-        docText.classList.add("second-column__documentation")
+        docText.classList.add("display__documentation")
         file.append(docText)
 
         const docTitle = document.createElement("div")
-        docTitle.classList.add("second-column__doc-title")
+        docTitle.classList.add("display__doc-title")
         docTitle.textContent = list[i].title
         docText.append(docTitle)
 
         const megabytes = document.createElement("div")
-        megabytes.classList.add("second-column__megabytes")
+        megabytes.classList.add("display__megabytes")
         megabytes.textContent = list[i].megabytes
         docText.append(megabytes)
     }
@@ -353,33 +398,33 @@ const links = [
     }
 ]
 
-const sharedLinks = (list) => {
+const createSharedLinks = (list) => {
     for (let i = 0; i < list.length; i++) {
-        const sharedUx = document.querySelector(".second-column__ux-container")
+        const sharedUx = document.querySelector(".display__ux-container")
         const ux = document.createElement("div")
-        ux.classList.add("second-column__ux")
+        ux.classList.add("display__ux")
         sharedUx.append(ux)
 
         const uxImg = document.createElement("div")
-        uxImg.classList.add("second-column__ux-img")
+        uxImg.classList.add("display__ux-img")
         ux.append(uxImg)
 
         const uxImgItem = document.createElement("img")
-        uxImgItem.classList.add("second-column__ux-el")
+        uxImgItem.classList.add("display__ux-el")
         uxImgItem.src = list[i].img
         uxImg.append(uxImgItem)
 
         const uxDescription = document.createElement("div")
-        uxDescription.classList.add("second-column__ux-description")
+        uxDescription.classList.add("display__ux-description")
         ux.append(uxDescription)
 
         const uxTitle = document.createElement("div")
-        uxTitle.classList.add("second-column__ux-title")
+        uxTitle.classList.add("display__ux-title")
         uxTitle.textContent = list[i].title
         uxDescription.append(uxTitle)
 
         const uxLink = document.createElement("div")
-        uxLink.classList.add("second-column__ux-link")
+        uxLink.classList.add("display__ux-link")
         uxLink.textContent = list[i].link
         uxDescription.append(uxLink)
 
@@ -388,9 +433,9 @@ const sharedLinks = (list) => {
 
 
 
-pdfFiles(files)
-sharedLinks(links)
-mediaPics(media)
+createPdfFiles(files)
+createSharedLinks(links)
+createMediaPics(media)
 sentMessages(receivedMessages)
 createMessages(messages)
 createUsers(users)
