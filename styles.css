@@ -459,6 +459,11 @@ body {
 }
 
 @media (max-width: 1280px) {
+
+    .sent-right__message {
+        font-size: 12px;
+    }
+
     .display__item-img {
         max-width: 40px;
         max-height: 40px;
@@ -773,6 +778,10 @@ body {
 
 
 @media (max-width: 480px) {
+
+    .display__text {
+        font-size: 12px;
+    }
 
     .display__user-main {
         width: 60px;
