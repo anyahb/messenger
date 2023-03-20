@@ -1,6 +1,8 @@
-
 body {
     background: #29B6F6;
+    padding: 0;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 @font-face {
